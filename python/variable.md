@@ -47,7 +47,7 @@ print(type(a))
 >
 > float 실수형
 >
-> String 문자열
+> str 문자열
 
 
 
@@ -83,8 +83,37 @@ print(c, end=' ')
 
 ## 변수입력과 연산자
 
-```python
+* 변수입력
 
+```python
+a=input("숫자를 입력하세요 :")
+print(a)
+# => 숫자를 입력하세요 :
+
+a, b=input("숫자를 입력하세요 : ").split()
+a=int(a)
+b=int(b)
+print(a+b)
+# => 숫자를 입력하세요 :   (2 3 입력)
+# => 5
+
+a, b=map(int,input("숫자를 입력하세요 : ").split())
+print(a+b)
+# => 숫자를 입력하세요 :   (2 3 입력)
+# => 5
+```
+
+* 연산자
+
+```python
+a, b=map(int,input("숫자를 입력하세요 : ").split())
+print(a+b)
+print(a-b)
+print(a*b)
+print(a/b)
+print(a//b) # // 는 몫을 구하는 것 
+print(a%b)	# %  는 나머지를 구하는것
+print(a**b) # ** 은 거듭제곱
 ```
 
 
