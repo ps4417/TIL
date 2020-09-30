@@ -1,0 +1,14 @@
+div{
+    width: 10px;
+    height: 10px;
+    background-color: #006bc0;
+    margin: 5px;
+    padding: 10px;
+}
+span{
+    width: 10px;
+    height: 10px;
+    background-color: #dc3546;
+
+    padding: 10px;
+}
