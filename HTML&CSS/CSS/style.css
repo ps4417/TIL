@@ -1,0 +1,22 @@
+/* 셀렉터 - 꾸며줄 대상을 선택! */
+
+/* 태그 셀렉터 */
+body{
+    font-family: 'NanumGothic';
+}
+
+/* 클래스 셀렉터 */
+.main{
+    color:#e43681;
+}
+
+.sub{
+    color: #006bc0;
+}
+
+/* 아이디 셀렉터 */
+#useless{
+    color: red;
+    font-weight: bold;
+    font-size: 30px;
+}
