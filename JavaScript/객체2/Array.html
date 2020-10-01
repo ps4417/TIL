@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array 객체</title>
+</head>
+<body>
+    <script>
+        var array1 = [10,20,30,40,50];
+
+        var a1 = array1.toString(); /* ,로 구분해서 하나의 문자열로 가져온다. */
+        document.write("a1: "+a1+"<br/>");
+
+        var a2 = array1.join("_");
+        document.write("a2: "+a2+"<br/>");
+
+        document.write("<hr/>");
+
+        var a3 = [];
+        document.write("a3.length: "+a3.length+"<br/>");
+        document.write("a3: "+a3+"<br/>");
+        
+        document.write("<hr/>");
+
+        a3[0]=10;
+        a3[1]=20;
+        document.write("a3.length: "+a3.length+"<br/>");
+        document.write("a3: "+a3+"<br/>");
+        document.write("<hr/>");
+
+        a3.push(30);
+        a3.push(40);
+        a3.push(50,60,70,80,90,100);  /* 배열 뒤에 추가한다. */
+        document.write("a3.length: "+a3.length+"<br/>");
+        document.write("a3: "+a3+"<br/>");
+        document.write("<hr/>");
+
+        var a4 = a3.pop();
+        document.write("a4: "+a4+"<br/>"); /* 배열의 맨 뒤에를 가져오고 배열에서 제거한다. */
+        document.write("a3.length: "+a3.length+"<br/>");
+        document.write("a3: "+a3+"<br/>");
+        document.write("<hr/>");
+
+        var a5 = a3.shift();
+        document.write("a5: "+a5+"<br/>"); /* 배열의 맨 앞에 있는걸 반환하며 제거한다. */
+        document.write("a3.length: "+a3.length+"<br/>");
+        document.write("a3: "+a3+"<br/>");
+        document.write("<hr/>");
+
+        a3.unshift(10); /* 반환하며 제거한 10을 다시 배열로 옮긴다. */
+        document.write("a3.length: "+a3.length+"<br/>");
+        document.write("a3: "+a3+"<br/>");
+        document.write("<hr/>");
+
+        var array3 = [50,30,10,20,40,80,90];
+        var array4 = ["다","바","가","나","사","마"];
+        array3.sort();  /* 배열을 정렬한다. */
+        array4.sort();
+        document.write("array3: "+array3+"<br/>");
+        document.write("array4: "+array4+"<br/>");
+        document.write("<hr/>");
+
+        array3.reverse();
+        array4.reverse();
+        document.write("array3: "+array3+"<br/>");
+        document.write("array4: "+array4+"<br/>");
+    </script>
+</body>
+</html>
