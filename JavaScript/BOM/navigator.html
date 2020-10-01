@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>navigator</title>
+    <script>
+        window.onload = function(){
+            var result = document.getElementById("result");
+
+            result.innerHTML = "cookieEnabled : " +navigator.cookieEnabled + "<br/>"
+                               + "appName : " + navigator.appName + "<br/>"
+                               + "appCodeName : " + navigator.appCodeName + "<br/>"
+                               + "product : " + navigator.product + "<br/>"
+                               + "appVersion : " + navigator.appVersion + "<br/>"
+                               + "userAgent : "+ navigator.userAgent + "<br/>"
+
+        }
+
+    </script>
+</head>
+<body>
+    <div id="result"></div>
+</body>
+</html>

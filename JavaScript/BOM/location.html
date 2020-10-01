@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>location</title>
+    <script>
+        function get_href(){
+            var result = document.getElementById("result");
+
+            result.innerHTML = location.href;
+        }
+        function set_href(){
+            location.href = "https://google.com";
+        }
+        function use_replace(){
+            location.replace("https://google.com"); /* history가 남지 않아 주소 변경 후 뒤로가기 안됨 */
+        }
+    </script>
+</head>
+<body>
+    <div id="result"></div>
+    <button onclick="get_href()">주소 가져오기</button>
+    <button onclick="set_href()">주소 변경하기(href)</button>
+    <button onclick="use_replace()">주소 변경하기(replace)</button>
+</body>
+</html>
