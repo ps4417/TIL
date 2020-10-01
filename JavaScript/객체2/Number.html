@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number</title>
+    <script>
+        var a1 = 2/0; /* JavaScript에서는 0으로 수를 나누면 Infinity가 출력됨 */
+        var a2 = -2/0;
+        document.write("a1: "+a1 +"<br/>");
+        document.write("a2: "+a2 +"<br/>");
+        document.write("<hr/>");
+
+        var a3 = 100-"abc"; /* NaN 출력됨 */
+        document.write("a3: "+a3+"<br/>");
+
+        var a4 = 100 - "10"; /* 숫자가 아닌 것이 숫자로 변환돼 계산됨 */ /* 덧셈의 경우 문자로 합쳐짐 */
+        document.write("a4: "+a4+"<br/>");
+
+        var a5 = 100-"abc";
+        if(isNaN(a5)==true){
+            document.write("a5는 숫자가 아닌 값이 들어있습니다.");
+        }else{
+            document.write("a5: "+a5+"<br/>");
+        }
+        document.write("<hr/>");
+
+        var a6 = "100";
+        var a7 = 100;
+        var a8 = a6+a7; /* 문자로 취급해 붙는다. */ /* a6-a7로 하면 값은 0이 출력된다. */
+        document.write("a8: "+a8+"<br/>"); /* 100100 출력됨 */
+
+        var a9 = parseInt(a6) + a7;
+        document.write("a9: "+a9+"<br/>");
+
+        var a10 = "11.11";
+        var a11 = 11.11;
+        var a12 = parseFloat(a10)+a11;
+        document.write("a12: "+a12+"<br/>");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
