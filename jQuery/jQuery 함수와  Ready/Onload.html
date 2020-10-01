@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>window.onload</title>
+    <script>
+        window.onload = function () {
+            var result = document.getElementById("result");
+            result.innerHTML += "on load 1"
+          }
+          window.onload = function () {
+            var result = document.getElementById("result");
+            result.innerHTML += "on load 2"
+          }
+          window.onload = function () {
+            var result = document.getElementById("result");
+            result.innerHTML += "on load 3" 
+            /* window.onload에 반복해서 넣어 주었기 때문에 
+            누적되지 않고 맨 마지막 것만 출력됨 */
+          }
+    </script>
+</head>
+<body>
+    <div id="result"></div>
+</body>
+</html>
