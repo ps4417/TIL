@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- 함수의 이름은 함수가 존재하는 메모리사으이 주소값을 의미하며 
+        다른 변수에 담거나 매개 변수로 넘기는 것이 가능하다. -->
+    <!-- 함수를 호출할 때 넘겨주는 값은 매개 변수로 받거나 arguments 배열로 받을 수 있다.  -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수 전달하기</title>
+    <script>
+        function f1(f2){
+            f2();
+        }
+        function f3(){
+            document.write("f3함수 호출<br/>");
+        }
+    </script>
+</head>
+<body>
+    <script>
+        f1(f3);
+        f1(function(){
+            document.write("익명함수 호출<br/>");
+        });
+    </script>
+</body>
+</html>
