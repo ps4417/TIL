@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>태그의 속성</title>
+    <script>
+        function read_attr(){
+            var test_image = document.getElementById("test_image");
+            var result = document.getElementById("result");
+
+            result.innerHTML = "id : "+ test_image.id + "<br/>"
+                                + "src : "+ test_image.src +"<br/>"
+                                + "width: "+ test_image.width + "<br/>"
+                                + "height : " + test_image.height + "<br/>";
+
+        }
+
+        function set_attr(){
+            var test_image = document.getElementById("test_image");
+            
+            test_image.width = 242;
+            test_image.height= 52;
+        }
+
+        function set_style(){
+            var test_p = document.getElementById("test_p");
+
+            // color :red
+            test_p.style.color = "red";
+            test_p.style.backgroundColor = "yellow";
+        }
+    </script>
+</head>
+<body>
+    <img id="test_image" src="google.jpg" alt="" width="386" height="130"/>
+    <button onclick="read_attr()">속성 읽어오기</button>
+    <button onclick="set_attr()">속성 설정하기</button>
+    <div id="result"></div>
+
+    <p id="test_p">동해물과 백두산이 마르고 닳도록</p>
+    <button onclick="set_style()">CSS 설정하기</button>
+</body>
+</html>
