@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>생성자 함수</title>
+<script>
+    function TestObject(){
+        document.write("생성자 함수 호출<br/>");
+
+        this.a1 = 100;  /* 2. 아무것도 없는 객체에 this로 접근해 값을 주입한다. */
+        this.a2 = 200;
+        this.a3 = function(){
+            document.write("a3호출<br/>");
+        }
+    }
+    var obj1 = new TestObject(); /* 1. 비어있는 객체를 생성해 obj1에 넣는다. */
+    var obj2 = new TestObject();
+
+    document.write("obj1.a1: "+obj1.a1 +"<br/>");
+    document.write("obj1.a2: "+obj1.a2 +"<br/>");
+    document.write("obj2.a1: "+obj2.a1 +"<br/>");
+    document.write("obj2.a2: "+obj2.a2 +"<br/>");
+
+    obj1.a1 = 500;
+    document.write("obj1.a1: "+obj1.a1 +"<br/>");
+    document.write("obj2.a1: "+obj2.a1 +"<br/>");
+
+    obj1.a3();
+    obj2.a3();
+</script>
+</head>
+<body>
+    
+</body>
+</html>
