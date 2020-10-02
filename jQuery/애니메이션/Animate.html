@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script>
+        function setSize(){
+            $("#a1").animate({
+                width:400,
+                height:400
+
+            },"slow");
+        }
+        function setOpacity(){
+            $("#a1").animate({
+               opacity:0 
+            },"slow");
+        }
+        function setPosition(){
+            $("#a1").animate({
+                left:100,
+                top:100
+            },"slow");
+        }
+        function setBackgroundColor(){
+            $("#a1").animate({
+                backgroundColor:"red"
+            },"slow");
+        }
+        function setTotal(){
+            $("#a1").animate({
+                width:400,
+                height:400,
+                opacity:0,
+                left:100,
+                top:100
+            },"slow");
+        }
+        function setSequence(){
+            $("#a1").delay(1000).animate({
+                width:400,
+                height:400
+            },"slow").delay(1000).animate({
+                left:100,
+                top:100
+                
+            },"slow").animate({
+                opacity:0
+            },"slow")
+        }
+    </script>
+    <style>
+        #a1{
+            border: 1px solid black;
+            background-color: yellow;
+            width: 200px;
+            height: 200px;
+            position : relative;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="setSize()">size 설정</button>
+    <button onclick="setOpacity()">투명도 조절</button>
+    <button onclick="setPosition()">위치 이동</button>
+    <button onclick="setBackgroundColor()">배경색 설정</button>
+    <button onclick="setTotal()">종합 설정</button>
+    <button onclick="setSequence()">순차 설정</button>
+    <div id="a1"></div>
+</body>
+</html>
