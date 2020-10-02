@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script>    
+        $(function () {  
+            $("p:eq(3)").css("background","yellow"); /* index 0번부터~ */
+            $("p:nth-child(1)").css("color","orange"); /* 영역안에서 1부터~ */
+            $("p:nth-of-type(1)").css("font-style","italic");
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <p>p태그</p>
+        <p>p태그</p>
+        <p>p태그</p>
+    </div>
+    <hr/>
+    <div>
+        <p>p태그</p>
+        <p>p태그</p>
+        <p>p태그</p>
+    </div>
+    <hr/>
+    <div>
+        <div>div태그</div>
+        <p>p태그</p>
+        <p>p태그</p>
+    </div>
+</body>
+</html>
