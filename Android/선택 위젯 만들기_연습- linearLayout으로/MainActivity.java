@@ -2,11 +2,14 @@ package com.example.p428;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -27,6 +30,44 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         listView = findViewById(R.id.listView);
         container = findViewById(R.id.container);
+
+        //항목 클릭 시 이벤트 발생
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+
+                // 화면에서 하나의 목록 클릭 시 화면에 사진이 크게 출력되도록 하기!
+                // dialog.xml에 만든 사진이 나오도록 하는 것! (클릭시 보이돠록)
+                LayoutInflater layoutInflater = getLayoutInflater();
+                View dview = layoutInflater.inflate(R.layout.dialog,(ViewGroup) findViewById(R.id.dlayout));
+                ImageView dimg = dview.findViewById(R.id.imageView2);
+                dimg.setImageResource(persons.get(position).getImg());
+                builder.setView(dview);
+
+
+
+
+                builder.setTitle("HI");
+                builder.setMessage("Name:"+ persons.get(position).getName());
+
+                builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+                builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // 따로 적을 필요가 없음
+                    }
+                });
+
+                builder.show();
+            }
+        });
+
     }
     // start adapter
     // 우리만의 adapter 를 만들어야한다.
