@@ -52,14 +52,14 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-    public void ck4(View v){  // 상단에 알림 창 뜨도록
+    public void ck4(View v){  // 상단에 알림 창 뜨도록  But, 이거는 단순히 정보를 표시하도록만 만들거라 알림을 눌러도 반응이 없다.
         manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         NotificationCompat.Builder builder = null;
         if(Build.VERSION.SDK_INT>=26){
             if(manager.getNotificationChannel("ch1")==null){
                 manager.createNotificationChannel(new NotificationChannel("ch1","chname",NotificationManager.IMPORTANCE_DEFAULT));
-                builder = new NotificationCompat.Builder(this,"ch1");
             }
+            builder = new NotificationCompat.Builder(this,"ch1");
         }else{
             builder = new NotificationCompat.Builder(this);
         }
@@ -69,22 +69,23 @@ public class MainActivity extends AppCompatActivity {
         Notification noti = builder.build();
         manager.notify(1,noti);
     }
-    public void ck5(View v){
+    public void ck5(View v){  // 상단의 알림을 눌렀을 시 동작하도록 하자!
         manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         NotificationCompat.Builder builder = null;
         if(Build.VERSION.SDK_INT>=26){
             if(manager.getNotificationChannel("ch2")==null){
                 manager.createNotificationChannel(new NotificationChannel("ch2","chname2",NotificationManager.IMPORTANCE_DEFAULT));
-                builder = new NotificationCompat.Builder(this,"ch2");
             }
+            builder = new NotificationCompat.Builder(this,"ch2");
         }else{
             builder = new NotificationCompat.Builder(this);
         }
+        // 알림을 클릭했을 때 Intent 객체를 이용해 MainActivity 화면을 띄워준다.
         Intent intent = new Intent(this,MainActivity.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(this,101,intent,PendingIntent.FLAG_UPDATE_CURRENT);
 
-        builder.setAutoCancel(true);  // notification 클릭하면 사라지도록
-        builder.setContentIntent(pendingIntent);
+        builder.setAutoCancel(true);  // notification, 즉 알림 표시를 클릭하면 알림 표시가 사라지도록 하는 역할
+        builder.setContentIntent(pendingIntent);   // 알림을 클릭했을 때 Intent 객체를 이용해 MainActivity 화면을 띄워준다.
         builder.setContentTitle("Noti Test");
         builder.setContentText("Content Text");
         builder.setSmallIcon(R.drawable.d2);
