@@ -36,7 +36,7 @@ public class Workshop {
 			
 			String str = "";
 			while((str=br.readLine()) != null) {
-				System.out.println(str);
+				System.out.println(str.trim());
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
