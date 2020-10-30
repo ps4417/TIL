@@ -133,8 +133,12 @@ public class Server {
 		public void run() { // 모든 사용자에게 받은 메시지를 보내줘야한다.
 			Collection<ObjectOutputStream> cols = maps.values(); // collection으로 빼내고
 			Iterator<ObjectOutputStream> it = cols.iterator();  // iterator에 넣어주고
-			while(it.hasNext()) {  // while로 반복해준다.
+			while(it.hasNext()) {  // while로 반복해 동작시킨다.
 				try {
+					if(msg.getIp() != null || !msg.getIp().equals("")) {  // null값이 아니거나 공백이 아니면
+						maps.get(msg.getIp()).writeObject(msg);
+						break;
+					}	
 					it.next().writeObject(msg);
 				} catch (IOException e) {
 					e.printStackTrace();

@@ -58,7 +58,7 @@ public class Client {
 		while (true) {
 			System.out.println("Input msg");
 			String ms = sc.nextLine();
-			Msg msg = new Msg("",id,ms);
+			Msg msg = new Msg("/192.168.0.3",id,ms);  // 귓속말을 하고자하는 유저의 IP를  "" 안에 직접 적어준다. 
 			sender.setMsg(msg);
 			new Thread(sender).start();
 			if (ms.equals("q")) {
